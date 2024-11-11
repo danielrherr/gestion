@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestion/Components/drawer.dart';
 import 'package:gestion/Provider/provider.dart';
 import 'package:provider/provider.dart';
 
@@ -11,6 +12,7 @@ class Settings extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Settings"),
       ),
+      drawer: const MyDrawer(),
       body: Consumer<UiProvider>(
         builder: (context, UiProvider notifier, child) {
           return Column(

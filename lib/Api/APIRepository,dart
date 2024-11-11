@@ -1,0 +1,20 @@
+
+
+class APIRepository {
+  final APIProvider  apiProvider;
+  APIRepository({required this.apiProvider});
+  Future<Map<String, dynamic>> fetchData(String endPoint) async {
+    try {
+      return await apiProvider.get(endPoint: endPoint);
+    } catch (e) {
+      return {'error': e.toString()};
+    }
+  }
+  Future<Map<String, dynamic>> sendData(String endPoint, Map<String, dynamic> data) async {
+    try {
+      return await apiProvider.post(endPoint: endPoint, data: data);
+    } catch (e) {
+      return {'error': e.toString()};
+    }
+  }
+}
